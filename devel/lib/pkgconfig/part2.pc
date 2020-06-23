@@ -1,0 +1,1 @@
+/home/alsarmi/Dropbox/KTH_Classes/Project_Course_Drone/dd2419_ws/devel/.private/part2/lib/pkgconfig/part2.pc

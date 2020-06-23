@@ -1,0 +1,8 @@
+prefix=/home/alsarmi/Dropbox/KTH_Classes/Project_Course_Drone/dd2419_ws/install
+
+Name: dd2419_simulation
+Description: Description of dd2419_simulation
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

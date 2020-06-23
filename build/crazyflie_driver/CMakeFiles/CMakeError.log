@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/alsarmi/Dropbox/KTH_Classes/Project_Course_Drone/dd2419_ws/build/crazyflie_driver/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_75225/fast"
+/usr/bin/make -f CMakeFiles/cmTC_75225.dir/build.make CMakeFiles/cmTC_75225.dir/build
+make[1]: Entering directory '/home/alsarmi/Dropbox/KTH_Classes/Project_Course_Drone/dd2419_ws/build/crazyflie_driver/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_75225.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_75225.dir/CheckSymbolExists.c.o   -c /home/alsarmi/Dropbox/KTH_Classes/Project_Course_Drone/dd2419_ws/build/crazyflie_driver/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_75225
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_75225.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_75225.dir/CheckSymbolExists.c.o  -o cmTC_75225 
+CMakeFiles/cmTC_75225.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_75225.dir/build.make:97: recipe for target 'cmTC_75225' failed
+make[1]: *** [cmTC_75225] Error 1
+make[1]: Leaving directory '/home/alsarmi/Dropbox/KTH_Classes/Project_Course_Drone/dd2419_ws/build/crazyflie_driver/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_75225/fast' failed
+make: *** [cmTC_75225/fast] Error 2
+
+File /home/alsarmi/Dropbox/KTH_Classes/Project_Course_Drone/dd2419_ws/build/crazyflie_driver/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/alsarmi/Dropbox/KTH_Classes/Project_Course_Drone/dd2419_ws/build/crazyflie_driver/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_9e036/fast"
+/usr/bin/make -f CMakeFiles/cmTC_9e036.dir/build.make CMakeFiles/cmTC_9e036.dir/build
+make[1]: Entering directory '/home/alsarmi/Dropbox/KTH_Classes/Project_Course_Drone/dd2419_ws/build/crazyflie_driver/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9e036.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_9e036.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_9e036
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9e036.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_9e036.dir/CheckFunctionExists.c.o  -o cmTC_9e036 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_9e036.dir/build.make:97: recipe for target 'cmTC_9e036' failed
+make[1]: *** [cmTC_9e036] Error 1
+make[1]: Leaving directory '/home/alsarmi/Dropbox/KTH_Classes/Project_Course_Drone/dd2419_ws/build/crazyflie_driver/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_9e036/fast' failed
+make: *** [cmTC_9e036/fast] Error 2
+
+

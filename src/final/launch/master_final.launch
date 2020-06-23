@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+
+<launch>
+    <!--Delay for broadcast and bt-->
+    <arg name="node_start_delay" default="5.0" />
+    <arg name="node_start_delay2" default="1.0" /> 
+
+    <!--Open rviz -->
+    <!-- <node type="rviz" name="rviz" pkg="rviz" respawn="true" args="-d $(find milestone2)/rviz/path_planning.rviz" /> -->
+    <!--Open rqt -->
+    <!-- <node name="rqt_gui" pkg="rqt_gui" type="rqt_gui" respawn="true" /> -->
+    <!-- Include General Launch Files -->
+    <!-- -->
+    <!-- <include file= "$(find dd2419_simulation)/launch/simulation.launch" >
+        <arg name="gui" value="False" />
+    </include > -->
+    <include file= "$(find dd2419_launch)/launch/base.launch" />
+
+    <!-- <include file= "$(find dd2419_simulation)/launch/aruco.launch"> 
+        <arg name="gui" value="false" />
+    </include >  -->
+    <!--Load the map-->
+    <!--<node pkg="milestone2" type="milestone2" name="milestone2" args="$ (find milestone2)/scripts/awesome.world.json" respawn="true" respawn_delay="10" /> -->
+    <!--Aruco Markers--> 
+    <node pkg="part2" type="displaymapmarkers" name="displaymapmarkers" args="/home/alsarmi/Dropbox/KTH_Classes/Project_Course_Drone/dd2419_ws/src/course_packages/dd2419_resources/worlds_json/awesome.world.json" output="screen" respawn="true" respawn_delay="10" />
+    <!-- Load the localization pkg first-->
+    <node pkg="final" type="localization.py" name="localization" respawn="true" respawn_delay="10" output="screen" /> 
+    <!--Load the path planner server-->
+    <node pkg="final" type="ppServer.py" name="ppServer" respawn="true" respawn_delay="10" /> 
+    <!--Load the broadcast-->
+    <node pkg="final" type="broadcast.py" name="broadcast" respawn="true" respawn_delay="10" /> <!-- launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@' " />-->
+    <!--Load the mobilenet-->
+    <node pkg="final" type="mobilenet_lite.py" name="mobilenet_lite" respawn="true" respawn_delay="10" /> 
+    <!--Load the state machine-->
+	<node pkg="milestone2" type="state_machine.py" name="state_machine" respawn="true" respawn_delay="10" output="screen" />
+    <!--Load the Behaviour tree-->
+	<!-- <node pkg="milestone2" type="bt_main.py" name="bt_main" respawn="true" respawn_delay="10" output="screen" launch-prefix="bash -c 'sleep $(arg node_start_delay2); $0 $@' "/> -->
+    <!-- Static Transformations -->
+    <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="cf_camera_trans" args="0.01 0 0.02 -1.54 0 -1.54 cf1/base_link cf1/camera_link" respawn="true" respawn_delay="10" /> -->
+    <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="cf_odom_trans" args="0 0 0 0 0 0 map cf1/odom" respawn="true" respawn_delay="10" /> -->
+</launch>
+

@@ -1,0 +1,10 @@
+[ 10%] Built target reboot
+[ 20%] Built target scan
+[ 30%] Built target console
+[ 40%] Built target listParams
+[ 50%] Built target battery
+[ 60%] Built target listMemories
+[ 70%] Built target listLogVariables
+[ 80%] Built target version
+[ 90%] Built target flash
+[100%] Built target comCheck

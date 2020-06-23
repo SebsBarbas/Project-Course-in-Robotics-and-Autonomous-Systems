@@ -1,0 +1,1 @@
+/home/alsarmi/Dropbox/KTH_Classes/Project_Course_Drone/dd2419_ws/devel/.private/aruco_ros/lib/python2.7/dist-packages/aruco_ros/cfg/__init__.py
